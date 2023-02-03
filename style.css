@@ -1,0 +1,216 @@
+*,*:after,*:before{
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(rgba(223, 98, 171, 0.781),rgba(219, 98, 203, 0.774),rgba(172, 81, 131, 0.781),rgba(198, 96, 207, 0.808));
+  
+  animation: color 12s ease-in-out infinite;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: arial;
+  font-size: 16px;
+  margin: 0;
+  
+}
+
+img{
+  max-width: 100%;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(143, 0, 112);
+}
+
+#header {
+  padding: 20px 30px;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main_nav ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.main_nav ul li{
+  float: left;
+  margin: 0 0 0 30px;
+  position: relative;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.main_nav ul li a{
+  color:rgb(170, 0, 133);
+  text-decoration: none;
+  line-height: 1.4;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_nav ul li a:before{
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background:rgb(255, 255, 255);
+  transition: all 0.3s ease-in-out;
+}
+
+.main_nav ul li a:after{
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background:rgb(143, 0, 112);
+  transition: all 0.3s ease-in-out;
+}
+
+.main_nav ul li:hover a::before{
+  left: 0;
+}
+
+.main_nav ul li:hover a::after{
+  right: 0;
+}
+
+.box1 {
+  min-width: 40%;
+  height:8rem;
+  border-radius: 6px;
+  background: linear-gradient(45deg,rgba(255, 237, 228, 0.527),rgba(255, 255, 255, 0.473),rgba(223, 226, 255, 0.486));
+  
+  margin:1.2rem;
+  float: left;
+  text-align: center;
+}
+
+.btt {
+  border-style: none;
+  width: 100px;
+  background-image: linear-gradient(92.88deg,
+  #9c26ac 9.16%, #7628aa 43.89%, #6e2bbb 64.72%);
+  color:white;
+  
+  height: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor:pointer;
+  flex-shrink: 0;
+  text-shadow: rgb(0,0,0,0.25) 0 3px 8px;
+  transition: all.5s;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.btt a{
+  text-decoration: none;
+}
+
+footer {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: rgb(143, 0, 112);
+	background-color: #ffffff;
+	text-align: center;
+	height: 45px;
+	width: 100%; vertical-align:middle;
+  padding-top:10px;}
+
+/*Resopnsive*/
+/* This media query use for ipad portrait view*/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .main_nav ul li{ margin: 0 0 0 15px; font-size: 16px;}
+}
+
+@media only screen and (min-width:768px){
+  .nav_ico{ display: none;}
+}
+
+@media only screen and (max-width: 767px) {
+  .main_nav{
+    position: fixed;
+    left: 0;
+    top: 73px;
+    padding: 0;
+    background: #ffffff00;
+    backdrop-filter: blur(20px);
+    height: calc(100vh - 73px);
+    width: calc(100% - 80px);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  #header ul a{
+    color: white;
+    background-color: rgb(170, 0, 133);
+    backdrop-filter: blur(30px);
+    font-weight: normal;
+    padding-left: 110px;
+  }
+
+
+  .main_nav.active{
+    transform: translateX(0);
+  }
+
+  .main_nav:after{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 0px;
+    background: rgba(129, 0, 168, 0);
+    
+  }
+
+  .main_nav.active:after{
+    width: 1000%;
+
+  }
+
+  .main_nav ul li{
+    float: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid;
+    text-align: center;
+  }
+  .main_nav ul li a{
+    padding: 10px;
+
+  }
+  .nav_ico {
+    width: 40px;
+    display: block;
+    color: #920086;
+  }
+}
